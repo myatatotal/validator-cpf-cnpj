@@ -1,0 +1,16 @@
+::ng-deep  .mat-form-field {
+  width: 100% !important;
+}
+
+.full-width {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100% !important;
+}
+
+
+
+::ng-deep  .mat-form-field-type-mat-input {
+  padding: 20px;
+  margin-bottom: 10px;
+}

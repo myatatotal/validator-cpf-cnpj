@@ -1,0 +1,41 @@
+<router-outlet></router-outlet>
+
+
+<form class="full-width" [formGroup]="myForm">
+
+  <div formArrayName="times" *ngFor="let time of this.fa?.value; let i = index; trackBy:trackByFn">
+    <mat-form-field class="full-width">
+
+    <div class="bios" [formGroupName]="i">
+
+      <mat-label>Nome:</mat-label>
+      <input type="text" matInput placeholder="Nome" formControlName="from">
+
+    </div>
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <div class="bios" [formGroupName]="i">
+      <mat-label>CPF ou CNPJ:</mat-label>
+      <input matInput placeholder="CPF ou CNPJ"  formControlName="to" [textMask]="{mask: cpfcnpjmask}" maxlength="20">
+      <!-- <input matInput [textMask]="{mask: mask}"   formControlName="from" type="text"/> -->
+      <!-- <input matInput placeholder="CPF" formControlName="to"> -->
+      <!-- <input matInput mask="000.000.000-00 || 00.000.000/0000-00" formControlName="to"> -->
+      <!-- <input matInput placeholder="CPF ou CNPJ" formControlName="to" mask="000.000.000-00||00.000.000/0000-00" /> -->
+      <!-- <input matInput type="text" [mask]="getCpfCnpjMask()" formControlName="cpf_cnpj"
+      [(ngModel)]="cpf_cnpj" placeholder="Digite o CPF ou CNPJ" required> -->
+
+
+
+    </div>
+
+  </mat-form-field>
+
+  </div>
+  <button mat-button (click)="addGroup()">Add</button>
+  <button mat-button (click)="removeGroup(i)">Remove</button>
+  <button mat-button (click)="onSubmit()">Submit</button>
+
+</form>
+
+
+
